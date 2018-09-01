@@ -1,0 +1,59 @@
+<img id="img1" class="img" src="http://bit.ly/2acrH5J" />
+<a href="#" class="close"></a>
+<img class="expand" src="Expand-icon.png" />
+<map name="m1">
+  <area shape="rect" coords="170 5 195 30" href="#img1">
+</map>
+<img id="img1" class="img" usemap="#m1"
+    src="http://bit.ly/2acrH5J" />
+.img {
+  height: 150px;
+  width: 200px;
+}
+.close {
+  background-image: url("Close-icon.png");
+  background-repeat: no-repeat;
+  bottom: 418px;
+  display: none;
+  height: 32px;
+  left: 462px;
+  margin-top: -32px;
+  position: relative;
+  width: 32px;
+}
+.expand {
+  bottom: 125px;
+  margin-left: -32px;
+  margin-right: 16px;
+  pointer-events: none;
+  position: relative;
+}
+.img:target {
+    height: 450px;
+    width: 500px;
+}
+.img:target+.close {
+    display: block;
+}
+.img:target+.close+.expand {
+    display: none;
+}
+<h2>CSS-only Zoom</h2>
+<map name=m1><area shape=rect coords="170 5 195 30" href=#img1></map>
+<map name=m2><area shape=rect coords="170 5 195 30" href=#img2></map>
+<map name=m3><area shape=rect coords="170 5 195 30" href=#img3></map>
+<map name=m4><area shape=rect coords="170 5 195 30" href=#img4></map>
+<div id=wrapper>
+  <img id=img1 class=img usemap=#m1 src=https://bit.ly/29OsQ4k />
+  <a href=# class=close></a>
+  <img class=expand src=http://icons.iconarchive.com/icons/icons8/ios7/16/Editing-Expand-icon.png/>
+  <img id=img2 class=img usemap=#m2 src=https://bit.ly/2anclbb />
+  <a href=# class=close></a>
+  <img class=expand src=http://icons.iconarchive.com/icons/icons8/ios7/16/Editing-Expand-icon.png/>
+  <img id=img3 class=img usemap=#m3 src=https://bit.ly/2aQcqZl />
+  <a href=# class=close></a>
+  <img class=expand src=http://icons.iconarchive.com/icons/icons8/ios7/16/Editing-Expand-icon.png/>
+  <img id=img4 class=img usemap=#m4 src=https://bit.ly/2acSgrJ />
+  <a href=# class=close></a>
+  <img class=expand src=http://icons.iconarchive.com/icons/icons8/ios7/16/Editing-Expand-icon.png/>
+</div>

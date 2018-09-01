@@ -1,0 +1,100 @@
+<!-- Bootstrap is needed for this example -->
+<link rel="stylesheet" href="example_files/bootstrap/css/bootstrap.min.css" type="text/css">
+
+<!-- jQuery core, needed if not already present. -->
+<script src="../axZm/plugins/jquery-2.2.4.js"></script>
+
+<!-- bootstrap.js, needed if not already present. -->
+<script src="example_files/bootstrap/js/bootstrap.min.js"></script>
+
+<!-- AJAX-ZOOM core, needed! -->
+<link href="../axZm/axZm.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../axZm/jquery.axZm.js"></script>
+
+<!-- js for this example (example4.php) -->
+<script type="text/javascript" src="../axZm/extensions/axZmExamples/jquery.axZm.azExample4.js"></script>
+
+
+#axZmNavbarNav {
+	border-radius: 0;
+	border-top-width: 0
+}
+
+#axZmPlayerContainerParent {
+	border: #e7e7e7 1px solid;
+	/* padding bottom sets the proportions of the player */
+	padding-bottom: 50%;
+}
+
+#axZmNavbarNav .navbar-nav>.active>a,
+#axZmNavbarNav .navbar-nav>.active>a:focus,
+#axZmNavbarNav .navbar-nav>.active>a:hover {
+	color: #FFF;
+	background-color: #2379b5;
+}
+
+#axZmNavbarNav .navbar-nav a {
+	padding: 15px 7px 15px 7px;
+}
+
+#axZmNavbarNav .navbar-brand {
+	padding: 15px 20px 15px 7px;
+}
+
+#axZmNavbarNav .navbar-nav a {
+	font-family: "Helvetica Narrow","Arial Narrow",Tahoma,Arial,Helvetica,sans-serif;
+}
+
+@media screen and (orientation:portrait) and (max-width: 768px) {
+	#axZmPlayerContainerParent {
+		padding-bottom: 100%;
+	}
+}
+HTML markup in body
+<!-- Container where AJAX-ZOOM will be loaded into -->
+<div class="embed-responsive" id="axZmPlayerContainerParent">
+	<div id="axZmPlayerContainer" class="embed-responsive-item">
+		Loading, please wait...
+	</div>
+</div>
+
+<nav class="navbar navbar-default" id="axZmNavbarNav">
+	<div class="container-fluid">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-target="#axZmNavbarDiv" data-toggle="collapse" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand">Folders</a>
+		</div>
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="axZmNavbarDiv">
+			<!-- id - "axZmNavbarContainer" is passed to the plugin -->
+			<ul class="nav navbar-nav" id="axZmNavbarContainer">
+				<li><a>Loading, please wait...</a></li>
+				<!--
+				<li class="active"><a href="#">Link</a></li>
+				<li><a href="#">Link</a></li>
+				-->
+			</ul>
+		</div><!-- /.navbar-collapse -->
+	</div><!-- /.container-fluid -->
+</nav>
+
+
+jQuery.azExample4({
+	axZmPath: "../axZm/", // Path to /axZm directory, e.g. /test/axZm/
+	zoomDir: "/pic/zoom", // Path to subfolders with images
+	divID: "axZmPlayerContainer", // ID of the main container
+	menuDivID: "axZmNavbarContainer", // ID of the menu container
+	firstFolder: 1, // index or name of the folder to be loaded at first
+	firstImage: 1, // index or name of the image to load from firstFolder
+	example: 8, // configuration set value which is passed to ajax-zoom
+	axZmCallBacks: {}, // AJAX-ZOOM has several callbacks, https://www.ajax-zoom.com/index.php?cid=docs#onBeforeStart
+	responsive: true, // Open responsive
+	fullScreenApi: false // try to open AJAX-ZOOM at browsers fullscreen mode
+});
